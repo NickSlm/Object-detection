@@ -5,8 +5,6 @@ import win32con
 
 
 class WindowCapture:
-    HEIGHT = 0
-    WIDTH = 0
     def __init__(self) -> None:
         self.HEIGHT = 1024
         self.WIDTH = 1920
