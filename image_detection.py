@@ -18,3 +18,4 @@ def image_detect(template_name):
     end_y = start_y + template.shape[0]
 
     return start_x, start_y,end_x, end_y
+
