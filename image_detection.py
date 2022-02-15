@@ -6,8 +6,10 @@ window_capture = WindowCapture("Untitled - Paint")
 
 def image_detect(template_name):
     image = window_capture.capture_screen()
-    image = cv2.cvtColor(image,cv2.COLOR_RGB2BGR)
+    image = cv2.cvtColor(image,cv2.COLOR_RGB2GRAY)
+
     template = cv2.imread(template_name)
+    template = cv2.cvtColor(template,cv2.COLOR_RGB2GRAY)
 
     result = cv2.matchTemplate(image,template,cv2.TM_CCOEFF_NORMED)
 
@@ -18,4 +20,3 @@ def image_detect(template_name):
     end_y = start_y + template.shape[0]
 
     return start_x, start_y,end_x, end_y
-

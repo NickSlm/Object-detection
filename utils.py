@@ -13,3 +13,8 @@ def get_recipes():
     with open(r'D:\Find image on screen\data\recipes.json') as f:
         data = json.load(f)
     return data
+
+def get_templates():
+    with open(r"D:\Find image on screen\data\template.json") as f:
+        data = json.load(f)
+    return data
