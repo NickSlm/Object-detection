@@ -3,7 +3,7 @@
     "Corpse detonator":{"icon":"/Find image on screen/images/templates/ModRecipeCorpseeploder.png","drops":["DivinationCards","DivinationCards"],"recipe":["Necromancer","Incendiary"]},
     "Necromancer":{"icon":"/Find image on screen/images/templates/ModRecipeNecromancer.png","drops":["Generic"],"recipe":["Bombardier","Overcharged"]},
     "Corrupter":{"icon":"/Find image on screen/images/templates/ModRecipeCorrupter.png","drops":["Abyss","Abyss"],"recipe":["Bloodletter","Chaosweaver"]},
-    "Drought bringer ":{"icon":"/Find image on screen/images/templates/ModRecipeFlaskdrain.png","drops":["Labyrinth","Labyrinth"],"recipe":["Malediction","Deadeye "]},
+    "Drought bringer ":{"icon":"/Find image on screen/images/templates/ModRecipeFlaskdrain.png","drops":["Labyrinth","Labyrinth"],"recipe":["Malediction","Deadeye"]},
     "Entangler ":{"icon":"/Find image on screen/images/templates/ModRecipeGraspingVines.png","drops":["Fossils","Fossils"],"recipe":["Toxic","Bloodletter"]},
     "Executioner":{"icon":"/Find image on screen/images/templates/ModRecipeExecutioner.png","drops":["Legion","Breach"],"recipe":["Frenzied","Berserker"]},
     "Hexer":{"icon":"/Find image on screen/images/templates/ModRecipeHexer.png","drops":["Essences","Essences"],"recipe":["Chaosweaver","Echoist"]},
