@@ -4,7 +4,10 @@ import sys
 from overlay import Overlay
 
 def main():
-    pass
+    app = QtWidgets.QApplication(sys.argv)
+    overlay = Overlay()
+    overlay.show()
+    sys.exit(app.exec_())
 
 if __name__ == "__main__":
     main()
