@@ -1,40 +1,29 @@
-import numpy
 import win32gui
 import win32ui
 import win32con
 
+from dataClass import WindowInfo
 
-class WindowCapture:
-    def __init__(self, window_name) -> None:
 
-        self.HEIGHT = 1024
-        self.WIDTH = 1920
-        self.hwnd = win32gui.FindWindow(None, window_name)
 
-    def capture_screen(self):
+def get_window_info():
 
-        # bmpfilenamename = "out.bmp"
+    info = WindowInfo()
 
-        wDC = win32gui.GetWindowDC(self.hwnd)
-        dcObj=win32ui.CreateDCFromHandle(wDC)
-        cDC=dcObj.CreateCompatibleDC()
-        dataBitMap = win32ui.CreateBitmap()
-        dataBitMap.CreateCompatibleBitmap(dcObj, self.WIDTH, self.HEIGHT)
-        cDC.SelectObject(dataBitMap)
-        cDC.BitBlt((0,0),(self.WIDTH, self.HEIGHT) , dcObj, (0,0), win32con.SRCCOPY)
+    hwnd = win32gui.FindWindow(None, 'Untitled - Paint')
+    if hwnd == 0:
+        print("CHANGE TO SHOW ERROR")
 
-        # save screenshot
-        # dataBitMap.SaveBitmapFile(cDC, bmpfilenamename)
+    x_0,y_0,x_1,y_1 = win32gui.GetWindowRect(hwnd)
 
-        signedIntsArray = dataBitMap.GetBitmapBits(True)
-        img = numpy.fromstring(signedIntsArray, dtype='uint8')
-        img.shape = (1024,1920,4)
+    info.win_x = x_0
+    info.win_y = y_0
+    info.win_width = x_1 - x_0
+    info.win_height = y_1 - y_0
 
-        # Free Resources
-        dcObj.DeleteDC()
-        cDC.DeleteDC()
-        win32gui.ReleaseDC(self.hwnd, wDC)
-        win32gui.DeleteObject(dataBitMap.GetHandle())
+    x_0,y_0,x_1,y_1 = win32gui.GetClientRect(hwnd)
+    info.client_width = x_1 - x_0
+    info.client_height = y_1 - y_0
 
-        return img
+    return info
 

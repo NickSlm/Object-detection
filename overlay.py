@@ -5,17 +5,19 @@ from PyQt5.QtWidgets import QMainWindow,QPushButton,QVBoxLayout,QWidget,QScrollA
 from PyQt5.QtGui import QPainter, QBrush, QPen,QColor,QIcon
 from functools import partial
 import sys
-from image_detection import image_detect
 from utils import get_recipes, get_templates
 
 class Overlay(QWidget):
-    def __init__(self):
+    def __init__(self,results):
         super().__init__()
         self.left = 0
         self.top = 0
         self.w = 1096
         self.h = 1024
-        self.object_to_paint = []
+        self.results = results
+
+        for result in self.results.items():
+            print(result)
 
 
         self.setWindowFlags(Qt.Window|Qt.X11BypassWindowManagerHint|Qt.WindowStaysOnTopHint|Qt.FramelessWindowHint)
@@ -31,7 +33,7 @@ class Overlay(QWidget):
         self.templates_data = get_templates()       
         for recipe in recipes_data.keys():
             self.recipe = QPushButton()
-            self.recipe.clicked.connect(partial(self.select_recipe,recipes=recipes_data[recipe]['recipe']))
+            # self.recipe.clicked.connect(partial(self.select_recipe,recipes=recipes_data[recipe]['recipe']))
             self.recipe.setStyleSheet("QPushButton"
                             "{"
                             f"border-image: url({recipes_data[recipe]['icon']});"
@@ -59,7 +61,7 @@ class Overlay(QWidget):
         scroll.setFixedWidth(96)
 
         layout = QGridLayout()
-        layout.addWidget(scroll,0,0,QtCore.Qt.AlignTop)
+        layout.addWidget(scroll,0,0)
 
         self.setLayout(layout)
 
@@ -72,16 +74,4 @@ class Overlay(QWidget):
 
     def paintEvent(self,e):
         painter = QPainter(self)
-        self.mark_objects(painter)
         painter.end()
-
-    def mark_objects(self,painter):
-        for object in self.object_to_paint:
-            s_x,s_y,e_x,e_y = image_detect(object)
-            painter.setPen(QPen(Qt.yellow, 3, Qt.SolidLine))
-            painter.drawRect(s_x,s_y, 48 ,48)
-
-    def select_recipe(self,recipes):
-        self.object_to_paint = []
-        for recipe in recipes:
-            self.object_to_paint.append(self.templates_data[recipe]['icon'])
