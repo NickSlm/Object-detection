@@ -15,7 +15,6 @@ def get_window_info():
         print("CHANGE TO SHOW ERROR")
 
     x_0,y_0,x_1,y_1 = win32gui.GetWindowRect(hwnd)
-
     info.win_x = x_0
     info.win_y = y_0
     info.win_width = x_1 - x_0

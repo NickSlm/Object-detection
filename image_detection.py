@@ -4,7 +4,7 @@ import json
 import numpy as np
 from utils import get_templates,create_scan_image,get_img_scale
 from windowcapture import get_window_info
-from PIL import ImageGrab,Image
+from PIL import ImageGrab
 from typing import Dict
 
 

@@ -8,7 +8,7 @@ def main():
     info  = get_window_info()
     image_detect = ImageDetector(info)
     app = QtWidgets.QApplication(sys.argv)
-    overlay = Overlay(image_detect.scan())
+    overlay = Overlay(image_detect)
     overlay.show()
     sys.exit(app.exec_())
 

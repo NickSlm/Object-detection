@@ -35,8 +35,8 @@ def create_scan_image(image,scale):
 
     template_scan = cv2.cvtColor(np.array(template_image_w_alpha),cv2.COLOR_RGB2GRAY)
 
-    w,h = template_scan.shape
 
+    w,h = template_scan.shape
     return template_scan[int(h * 1.0 / 10):int(h * 2.3 / 3), int(w * 1.0 / 6):int(w * 5.5 / 6)]
 
 

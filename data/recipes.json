@@ -24,7 +24,7 @@
     "Invulnerable":{"icon":"/Find image on screen/images/templates/ModRecipeDivinetouched.png","drops":["Delirium","Metamorph"],"recipe":["Sentinel", "Juggernaut", "Consecrator"]},
     "Crystal-skinned":{"icon":"/Find image on screen/images/templates/ModRecipeLivingCrystal.png","drops":["Harbinger","Harbinger"],"recipe":["Permafrost", "Rejuvenating", "Berserker"]},
     "Empowered Elements":{"icon":"/Find image on screen/images/templates/ModRecipeCycleofelements.png","drops":["Unique","Unique"],"recipe":["Evocationist", "Steel-infused", "Chaosweaver"]},
-    "effigy":{"icon":"/Find image on screen/images/templates/ModRecipeVoodoodoll.png","drops":["DivinationCards","DivinationCards"],"recipe":["Hexer", "Malediction", "Corrupter"]},
+    "Effigy":{"icon":"/Find image on screen/images/templates/ModRecipeVoodoodoll.png","drops":["DivinationCards","DivinationCards"],"recipe":["Hexer", "Malediction", "Corrupter"]},
     "Lunaris-touched":{"icon":"/Find image on screen/images/templates/ModPantheonLunaris.png","drops":["Unique"],"recipe":["Invulnerable", "Frost Strider", "Empowering Minions"]},
     "Solaris-touched":{"icon":"/Find image on screen/images/templates/ModPantheonSolaris.png","drops":["Scarabs"],"recipe":["Invulnerable", "Magma Barrier", "Empowering Minions"]},
     "Arakaali-touched":{"icon":"/Find image on screen/images/templates/ModPantheonArakaali.png","drops":["DivinationCards"],"recipe":["Corpse Detonator", "Entangler", "Assassin"]},
